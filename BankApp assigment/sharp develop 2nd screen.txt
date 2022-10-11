@@ -1,0 +1,79 @@
+/*
+ * Created by SharpDevelop.
+ * User: RCFE353
+ * Date: 23/01/2019
+ * Time: 13:36
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+namespace BankAppAssignment
+{
+	/// <summary>
+	/// Description of BankAccount.
+	/// </summary>
+	public class BankAccount
+	{
+		
+		
+		
+		private double balance=0; //a private member field
+		private double interestRate; // a private member field
+		private double InterestEarned; // a private member field
+		private int accountNo; // a private member field
+		private double Deposits2; // a private member field
+		private double Withdrawals2; // a private member field
+	
+	  	
+		public double GetBalance() //a getter method
+	  	{
+	    	return balance;
+	  	}
+		
+		public void Deposit(double n) // a deposit method, a setter method
+	  	{
+	   	 balance = balance + n; //same as balance += n;
+	
+	  	}
+	  
+		public void Withdraw(double n) // a withdraw method
+	 	 {
+	    	if(n > balance){
+	   		 	Console.WriteLine("Not enough funds to match withdrawel");
+	      	}else{
+	    		balance = balance - n; //same as balance -= n;
+	      	}
+	  	}
+		
+		public void Interestearned(double interestrate)
+		{
+			InterestEarned = balance * interestRate;
+		}
+		
+		public void printInfo(){
+			
+			Console.WriteLine( "AccountNo: " + accountNo + "\tBalance: " + balance + "\tInterestEarned: " + InterestEarned);
+			
+			// Console.WriteLine("Account number " + accountNo);
+			// Console.WriteLine("Balance "+balance);
+			// Console.WriteLine("Interest Earned "+InterestEarned);
+			
+		}
+		
+		
+		
+		public BankAccount(int acc , double bal)
+		{
+			
+			accountNo = acc;
+			balance = bal * 1.1;
+		}
+		
+		
+		
+		
+		
+		
+	}
+}

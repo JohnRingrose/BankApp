@@ -1,0 +1,133 @@
+/*
+ * Created by SharpDevelop.
+ * User: RCFE353
+ * Date: 23/01/2019
+ * Time: 13:36
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+namespace BankAppAssignment
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			
+	
+		
+	string username, password; //username and password variables
+     
+    int loginAttempts = 0; //Login Attempts counter
+
+    //Simple iteration up to three times
+    for (int i = 0; i < 3; i++)
+    {
+        Console.WriteLine("Enter username");
+        username = Console.ReadLine();
+        Console.WriteLine("Enter password");
+        password = Console.ReadLine();
+
+        if (username != "blessing" || password != "ccp3")
+            
+            loginAttempts++;//increment counter
+        else
+            break;
+    }
+
+    //Display the result
+    if (loginAttempts > 1)
+        Console.WriteLine("Login failure");
+    else
+        Console.WriteLine("Login successful");
+
+    Console.ReadKey();
+    
+    // if statement to check if the user wishes to continue
+    Console.WriteLine("Would you like to continue press Y for yes or Key N for No");
+    string temp = Console.ReadLine();
+    if(temp == "Y" || temp == "N") {
+    	
+    
+		
+    
+    
+    
+    int[] accountNo= {80045001 , 80045002 , 80045003 , 80045004};
+    double[] initBalance= { 100 , 200 , 300 , 400};
+    double[] deposit1={100 , 200 , 300 , 400};
+    double[] withdraw1 ={ 50 , 50 , 50 , 50 };
+    double[] interestRate = { 0.01 , 0.02 , 0.03 ,  0.04};
+    double[] deposit2 ={10,200,300,400};
+    double[] withdrawals2 ={155,50,50,50};
+    
+    BankAccount[] gobshites = new BankAccount[4];
+
+    
+    for(int i=0;i<gobshites.Length;i++) // start at 0 , check if your less than 4 if so execute statement
+    {
+    	gobshites[i] = new BankAccount(accountNo[i] , initBalance[i]);
+    	
+    }
+    
+    for(int i=0; i<gobshites.Length;i++)// start at 0 , check if your less than 4 if so execute statement
+    {
+    	gobshites[i].Deposit(deposit1[i]);
+    	gobshites[i].Withdraw(withdraw1[i]);
+    	gobshites[i].Interestearned(interestRate[i]);
+    	gobshites[i].printInfo();
+    }
+    
+    
+ 
+     
+     for(int i=0; i<gobshites.Length;i++)
+    {
+      gobshites[i].Withdraw(withdrawals2[i]);
+    }
+     
+      for(int i=0; i<gobshites.Length;i++)
+    {
+       gobshites[i].Deposit(deposit2[i]);
+    }
+      
+   
+      	
+    } else {
+    	Console.WriteLine("BYE!");
+    	Console.WriteLine();
+    	
+    }
+      	
+      	
+      	
+      	
+  
+     Console.WriteLine("");
+     Console.WriteLine("t/t Bank Report 1");
+     gobshites[i].printInfo();
+			
+  	
+  	
+  	
+  	
+			
+		
+			// TODO: Implement Functionality Here
+			
+			Console.WriteLine("Your bank balance");
+			Console.WriteLine(gobshites[0].GetBalance());
+			
+		gobshites[0].Deposit(50);
+			
+			Console.WriteLine("Your new bank balance is :");
+			Console.WriteLine(gobshites[0].GetBalance());
+			
+			
+			
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}

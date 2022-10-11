@@ -1,0 +1,52 @@
+/*
+ * Created by SharpDevelop.
+ * User: rcfe359
+ * Date: 18/01/2019
+ * Time: 11:37
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+namespace BankAccount
+{
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+		
+			
+			
+			int[] accNumbers = {1111,22222,33333,44444};
+			
+			double[] initBalance = {100,200,300,400};
+			
+			double[] deposits = {2,3,5,6};
+			
+			BankAccount[] bankaccs = new BankAccount[4]; //inititiates an array of blank objects
+			
+			
+			bankaccs[0] = new BankAccount();
+			
+			bankaccs[0].Deposit(deposits[2]);
+			
+			double bank1bal = bankaccs[0].GetBalance();
+			
+			Console.WriteLine("Balance on bankaccs[0] is "+bank1bal);
+			
+			
+			
+			
+			
+			
+			var bankacc1 = new BankAccount(accNumbers[0],initBalance[0]);
+			
+			
+			Console.WriteLine("Balance on bankacc1 is ");
+			Console.Write(bankacc1.GetBalance());
+			
+			Console.Write("Press any key to continue . . . ");
+			Console.ReadKey(true);
+		}
+	}
+}

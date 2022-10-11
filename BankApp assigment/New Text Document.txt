@@ -1,0 +1,57 @@
+/*
+ * Created by SharpDevelop.
+ * User: rcfe359
+ * Date: 18/01/2019
+ * Time: 11:39
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+namespace BankAccount
+{
+	/// <summary>
+	/// Description of BankAccount.
+	/// </summary>
+	public class BankAccount
+	{
+		//private member fields
+		private int accountNo;
+		private double balance;
+		private double interestRate;
+		private double interestEarned;
+		
+		
+		
+		public void Deposit(double deposit) {
+		
+			balance = balance + deposit;
+		}
+		
+		public void Withdrawal(double withdraw) {
+			
+			balance = balance - withdraw;
+		}
+		
+		
+		public double GetBalance(){
+			
+			return balance;
+		}
+		
+		
+		
+		//default constructor
+		public BankAccount()
+		{
+		}
+		//overlaoded constructor - to initiate our object
+		public BankAccount(int acc, double bal)
+		{
+			accountNo =acc;
+			balance = bal*1.1;
+		}
+		
+		
+	}
+}
